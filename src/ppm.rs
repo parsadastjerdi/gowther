@@ -25,8 +25,11 @@ pub fn write_ppm_file(file_name: String) {
     const SOME_CONST: f32 = 255.999;
     let b: i32 = (SOME_CONST * 0.25) as i32;
     for g in (0..IMAGE_HEIGHT).rev() {
+        println!("Scanlines remaining: {}", g);
         for r in 0..IMAGE_WIDTH {
             file.write_all(format!("{} {} {}\n", r, g, b).as_bytes()).expect("TODO: panic message");
         }
     }
+
+    println!("Done writing to PPM file.");
 }
