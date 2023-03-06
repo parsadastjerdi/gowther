@@ -1,3 +1,7 @@
+mod ppm;
+
+use crate::ppm::write_ppm_file;
+
 fn main() {
-    println!("Hello, world!");
+    write_ppm_file("output.ppm".to_string());
 }
